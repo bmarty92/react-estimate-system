@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900");
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; }
+
+.app-navbar {
+  display: flex; }
+  .app-navbar__item {
+    justify-content: flex-end;
+    padding: 0 20px;
+    justify-content: flex-end; }
+
+.initial-screen {
+  align-items: center; }
+  .initial-screen__title {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-align: center; }
+  .initial-screen__data-form {
+    margin: 40px;
+    display: flex; }
+    .initial-screen__data-form .input {
+      margin: 10px;
+      width: 180px; }

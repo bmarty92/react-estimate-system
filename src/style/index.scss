@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+.app-navbar {
+  display: flex;
+  &__item {
+    justify-content: flex-end;
+    padding: 0 20px;
+    justify-content: flex-end;
+  }
+}
+
+
+.initial-screen {
+  align-items: center;
+  &__title {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-align: center;
+  }
+  &__data-form {
+    margin: 40px;
+    display: flex;
+    .input {
+      margin: 10px;
+      width: 180px;
+    }
+  }
+}
