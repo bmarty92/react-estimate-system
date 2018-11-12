@@ -9,7 +9,7 @@ function Navbar({ routes }) {
       <ul className="app-navbar">
         {routes.map((route, index) => (
           <li className="app-navbar__item" key={index}>
-            <Link to={`/${route}`}>{route}</Link>
+            <Link to={route.path}>{route.title}</Link>
           </li>
         ))}
       </ul>

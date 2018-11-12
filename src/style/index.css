@@ -18,8 +18,46 @@
     font-weight: 900;
     text-align: center; }
   .initial-screen__data-form {
+    justify-content: center;
     margin: 40px;
     display: flex; }
     .initial-screen__data-form .input {
       margin: 10px;
       width: 180px; }
+    .initial-screen__data-form .button {
+      margin-top: 10px; }
+
+.estimate-page {
+  align-items: center; }
+  .estimate-page__title {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-align: center; }
+  .estimate-page__data-form {
+    justify-content: center;
+    margin: 40px;
+    display: flex; }
+    .estimate-page__data-form .input {
+      margin: 10px;
+      width: 180px; }
+    .estimate-page__data-form .button {
+      margin-top: 10px; }
+
+.site-header {
+  display: flex;
+  flex-flow: column;
+  min-height: 35vh;
+  background-color: #3252E5;
+  align-items: center;
+  padding: 0 130px;
+  padding-top: 10vh; }
+  .site-header__title {
+    padding: 0;
+    margin: 0;
+    font-weight: 900;
+    padding-bottom: 15px; }
+  .site-header__subtitle {
+    padding: 0;
+    margin: 0;
+    font-weight: 900; }

@@ -26,11 +26,59 @@
     text-align: center;
   }
   &__data-form {
+    justify-content: center;
     margin: 40px;
     display: flex;
     .input {
       margin: 10px;
       width: 180px;
     }
+    .button {
+      margin-top: 10px;
+    }
+  }
+}
+
+.estimate-page {
+  align-items: center;
+  &__title {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-align: center;
+  }
+  &__data-form {
+    justify-content: center;
+    margin: 40px;
+    display: flex;
+    .input {
+      margin: 10px;
+      width: 180px;
+    }
+    .button {
+      margin-top: 10px;
+    }
+  }
+}
+.site-header {
+  display: flex;
+  flex-flow: column;
+  min-height: 35vh;
+  background-color: #3252E5;
+  align-items: center;
+  padding: 0 130px;
+  padding-top: 10vh;
+
+  &__title {
+    padding: 0;
+    margin: 0;
+    font-weight: 900;
+    padding-bottom: 15px;
+  }
+
+  &__subtitle {
+    padding: 0;
+    margin: 0;
+    font-weight: 900;
   }
 }
