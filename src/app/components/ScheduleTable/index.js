@@ -1,5 +1,5 @@
 import React from 'react';
-import ScheduleRow from './ScheduleRow';
+
 
 function ScheduleTable(props) {
   const { data, index } = props;
@@ -7,9 +7,13 @@ function ScheduleTable(props) {
     <table>
       <thead>
         <tr>
-          <th>{data}</th>
+          <th>Date</th>
+          <th>Item Name</th>
+          <th>Item Code</th>
+          <th>Item Price</th>
+          <th>Item Quantity</th>
+          <th>Total Price</th>
         </tr>
-        <ScheduleRow />
       </thead>
       <tbody>
         <tr>

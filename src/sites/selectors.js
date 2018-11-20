@@ -18,3 +18,8 @@ export const getScheduleId = (state, id) => {
   const siteById = getSiteById(state, id) || {};
   return siteById.schedule || [];
 }
+
+export const getMechanismsId = (state, id) => {
+  const siteById = getSiteById(state, id) || {};
+  return siteById.mechanisms || [];
+}

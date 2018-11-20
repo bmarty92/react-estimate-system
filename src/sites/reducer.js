@@ -35,6 +35,18 @@ export default (state = INITIAL_STATE, { type, payload, id }) => {
         sites: [...updatedSites],
       };
     }
+    case types.ADD_MECHANISM_DATA: {
+      const updatedSites = [...state.sites];
+      const siteIndex = updatedSites.findIndex(item => {
+        return item.id === Number(id);
+      });
+      const mechanisms = updatedSites[siteIndex].mechanisms || [];
+      updatedSites[siteIndex].mechanisms = [...mechanisms, payload];
+      return {
+        ...state,
+        sites: [...updatedSites],
+      };
+    }
     default:
       return state;
   }

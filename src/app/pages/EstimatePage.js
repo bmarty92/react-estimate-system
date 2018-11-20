@@ -9,7 +9,7 @@ import EstimateTable from '../components/EstimateTable';
 import sites from '../../sites';
 
 function EstimatePage(props) {
-  const { addItemData, estimates } = props;
+  const { addItemData, estimates, match } = props;
   const onSubmit = event => {
     event.preventDefault();
     const payload = [...event.target.children].reduce((result, child) => {
@@ -21,7 +21,7 @@ function EstimatePage(props) {
         [child.name]: child.value,
       };
     }, {});
-    addItemData(payload, props.match.params.id);
+    addItemData(payload, match.params.id);
   };
   return (
     <div className="estimate-page">

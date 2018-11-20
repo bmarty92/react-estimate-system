@@ -68,8 +68,7 @@ class WeekSchedule extends React.Component {
         [value.date]: [...resultData, value.data],
       };
     }, {});
-    console.log(reducedSchedule);
-    console.log(Object.entries(reducedSchedule));
+    const resultDataObject = Object.entries(reducedSchedule);
     return (
       <React.Fragment>
         <InputField type="date" onChange={this.setDate} name="date" />
@@ -113,10 +112,9 @@ class WeekSchedule extends React.Component {
           </table>
         )}
         <div>{JSON.stringify(Object.entries(reducedSchedule))}</div>
-        {Object.entries(reducedSchedule).map((data, index) => {
-          <ScheduleTable data={data}, index={index} />
-        })}
-        ;
+        {/* {resultDataObject.map((element, index) => {
+          return <li>{JSON.stringify(element)}</li>;
+        })} */}
       </React.Fragment>
     );
   }

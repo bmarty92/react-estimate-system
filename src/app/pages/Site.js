@@ -33,7 +33,7 @@ class Site extends React.Component {
         path: `/site/${props.match.params.id}/payment`,
       },
       {
-        title: 'Requests',
+        title: 'Requests & Notes',
         path: `/site/${props.match.params.id}/requests`,
       },
     ];
