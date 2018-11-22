@@ -23,3 +23,18 @@ export const getMechanismsId = (state, id) => {
   const siteById = getSiteById(state, id) || {};
   return siteById.mechanisms || [];
 }
+
+export const getMechanismRequestsId = (state, id) => {
+  const siteById = getSiteById(state, id) || {};
+  return siteById.mechanismsRequest || [];
+}
+
+export const getMaterialRequestId = (state, id) => {
+  const siteById = getSiteById(state, id) || {};
+  return siteById.materialRequests || [];
+}
+
+export const getNotesId = (state, id) => {
+  const siteById = getSiteById(state, id) || {};
+  return siteById.notes || [];
+}

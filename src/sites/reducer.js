@@ -47,6 +47,45 @@ export default (state = INITIAL_STATE, { type, payload, id }) => {
         sites: [...updatedSites],
       };
     }
+    case types.ADD_MECHANISM_REQUEST: {
+      const updatedSites = [...state.sites];
+      const siteIndex = updatedSites.findIndex(item => {
+        return item.id === Number(id);
+      });
+      const mechanismsRequest = updatedSites[siteIndex].mechanismsRequest || [];
+      updatedSites[siteIndex].mechanismsRequest = [
+        ...mechanismsRequest,
+        payload,
+      ];
+      return {
+        ...state,
+        sites: [...updatedSites],
+      };
+    }
+    case types.ADD_MATERIAL_REQUEST: {
+      const updatedSites = [...state.sites];
+      const siteIndex = updatedSites.findIndex(item => {
+        return item.id === Number(id);
+      });
+      const materialRequest = updatedSites[siteIndex].materialRequest || [];
+      updatedSites[siteIndex].materialRequest = [...materialRequest, payload];
+      return {
+        ...state,
+        sites: [...updatedSites],
+      };
+    }
+    case types.ADD_NOTES: {
+      const updatedSites = [...state.sites];
+      const siteIndex = updatedSites.findIndex(item => {
+        return item.id === Number(id);
+      });
+      const notes = updatedSites[siteIndex].notes || [];
+      updatedSites[siteIndex].notes = [...notes, payload];
+      return {
+        ...state,
+        sites: [...updatedSites],
+      };
+    }
     default:
       return state;
   }
