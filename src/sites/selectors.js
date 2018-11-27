@@ -31,7 +31,7 @@ export const getMechanismRequestsId = (state, id) => {
 
 export const getMaterialRequestId = (state, id) => {
   const siteById = getSiteById(state, id) || {};
-  return siteById.materialRequests || [];
+  return siteById.materialRequest || [];
 }
 
 export const getNotesId = (state, id) => {

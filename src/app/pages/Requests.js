@@ -4,9 +4,11 @@ import { bindActionCreators } from 'redux';
 
 import MechanismRequest from '../components/MechanismRequest';
 import MaterialRequest from '../components/MaterialRequest';
+import Notes from '../components/Notes';
 import InputField from '../components/InputField';
 import Button from '../components/Button';
 import TextArea from '../components/TextArea';
+
 import sites from '../../sites';
 
 class Requests extends React.Component {
@@ -45,6 +47,18 @@ class Requests extends React.Component {
     addMaterialRequests(payload, match.params.id);
   };
 
+  addNote = event => {
+    event.preventDefault();
+    const { addNotes, match } = this.props;
+    const { note } = this.state;
+    const payload = {
+      date: event.target.date.value,
+      name: event.target.name.value,
+      message: note,
+    };
+    addNotes(payload, match.params.id);
+  };
+
   setMechNote = event => {
     event.preventDefault();
     this.setState({ mechanismNote: event.target.value });
@@ -53,6 +67,11 @@ class Requests extends React.Component {
   setMaterialNote = event => {
     event.preventDefault();
     this.setState({ materialNote: event.target.value });
+  };
+
+  setNote = event => {
+    event.preventDefault();
+    this.setState({ note: event.target.value });
   };
 
   render() {
@@ -127,6 +146,27 @@ class Requests extends React.Component {
             {!!materialRequest.length && (
               <div className="materialRequests">
                 <MaterialRequest materialRequest={materialRequest} />
+              </div>
+            )}
+          </div>
+
+          <div className="notes-screen">
+            <form className="notes-screen__data-form" onSubmit={this.addNotes}>
+              <h3 className="notes-screen__title">Additional notes</h3>
+              <InputField type="date" placeholder="Date" name="date" />
+              <InputField type="text" placeholder="Name" name="name" />
+              <TextArea
+                placeholder="Notes"
+                name="note"
+                rows={5}
+                value={note}
+                onChange={this.setNote}
+              />
+              <Button type="submit">Submit Entry</Button>
+            </form>
+            {!!notes.length && (
+              <div className="notes">
+                <Notes notes={notes} />
               </div>
             )}
           </div>

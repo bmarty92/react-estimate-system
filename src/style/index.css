@@ -93,6 +93,8 @@
     .mechanism-request-screen__data-form .input {
       margin: 10px;
       width: 180px; }
+    .mechanism-request-screen__data-form .textarea {
+      width: 180px; }
     .mechanism-request-screen__data-form .button {
       margin-top: 10px; }
 
@@ -110,6 +112,8 @@
     .material-request-screen__data-form .input {
       margin: 10px;
       width: 180px; }
+    .material-request-screen__data-form .textarea {
+      width: 180px; }
     .material-request-screen__data-form .button {
       margin-top: 10px; }
 
@@ -117,12 +121,13 @@
   display: flex; }
 
 table {
-  margin: 40px;
-  border: solid 1px black; }
+  margin: 40px; }
   table thead tr, table tbody tr, table tfoot tr {
     border: solid 1px black; }
     table thead tr th, table tbody tr th, table tfoot tr th {
       min-width: 100px;
       border: solid 1px black; }
-  table .noteCell {
-    max-width: 200px; }
+
+.noteCell {
+  max-width: 200px;
+  border: solid 1px black; }

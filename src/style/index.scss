@@ -99,6 +99,7 @@
       margin: 10px;
       width: 180px;
     }
+
     .button {
       margin-top: 10px;
     }
@@ -120,6 +121,9 @@
     .input {
       margin: 10px;
       width: 180px;
+    }
+    .textarea {
+     width: 180px;
     }
     .button {
       margin-top: 10px;
@@ -143,6 +147,9 @@
       margin: 10px;
       width: 180px;
     }
+    .textarea {
+      width: 180px;
+    }
     .button {
       margin-top: 10px;
     }
@@ -164,10 +171,10 @@ table {
         border: solid 1px black;
       }
     }
-
   }
+}
   .noteCell {
     max-width: 200px;
+    border: solid 1px black;
   }
-  border: solid 1px black;
-}
+
