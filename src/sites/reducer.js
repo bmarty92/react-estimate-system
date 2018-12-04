@@ -86,6 +86,18 @@ export default (state = INITIAL_STATE, { type, payload, id }) => {
         sites: [...updatedSites],
       };
     }
+    case types.ADD_PAYMENT: {
+      const updatedSites = [...state.sites];
+      const siteIndex = updatedSites.findIndex(item => {
+        return item.id === Number(id);
+      });
+      const payment = updatedSites[siteIndex].payment || [];
+      updatedSites[siteIndex].payment = [...payment, payload];
+      return {
+        ...state,
+        sites: [...updatedSites],
+      };
+    }
     default:
       return state;
   }

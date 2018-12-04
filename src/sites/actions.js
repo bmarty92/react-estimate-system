@@ -21,3 +21,6 @@ export const addMechanismRequests = (payload, id) => {
 export const addNotes = (payload, id) => {
   return { type: types.ADD_NOTES, payload, id };
 };
+export const addPayment = (payload, id) => {
+  return { type: types.ADD_PAYMENT, payload, id };
+};

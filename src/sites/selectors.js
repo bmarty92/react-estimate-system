@@ -38,3 +38,7 @@ export const getNotesId = (state, id) => {
   const siteById = getSiteById(state, id) || {};
   return siteById.notes || [];
 }
+export const getPaymentId = (state, id) => {
+  const siteById = getSiteById(state, id) || {};
+  return siteById.payment || [];
+}

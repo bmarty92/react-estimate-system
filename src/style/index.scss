@@ -68,6 +68,8 @@
   align-items: center;
   padding: 0 130px;
   padding-top: 10vh;
+  border-style: hidden;
+  border-radius: 10px;
 
   &__title {
     padding: 0;
@@ -156,6 +158,33 @@
   }
 }
 
+.notes-screen {
+  max-width: 500px;
+  align-items: center;
+  &__title {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-align: center;
+  }
+  &__data-form {
+    justify-content: center;
+    margin: 40px;
+    .input {
+      margin: 10px;
+      width: 180px;
+    }
+    .textarea {
+      width: 180px;
+    }
+    .button {
+      margin-top: 10px;
+    }
+  }
+}
+
+
+
 .request-screen {
   display: flex;
 }
@@ -167,14 +196,92 @@ table {
     tr {
       border: solid 1px black;
       th {
-        min-width: 100px;
+
         border: solid 1px black;
       }
     }
   }
 }
+
+.payment-table {
+  margin: 40px;
+  thead, tbody, tfoot {
+    tr {
+      border: solid 1px black;
+      th {
+        width: 30px;
+        border: solid 1px black;
+        }
+      td {
+        width: 30px;
+        border: solid 1px black;
+        }
+        .input-cell {
+          border: solid 1px black;
+          width: 150px;
+          }
+        .number-cell {
+          border: solid 1px black;
+          width: 40px;
+          }
+        }
+      }
+    }
+
+    .payment-screen {
+      margin: auto;
+      align-content: center;
+      max-width: 1300px;
+      &__data-fields {
+        margin: auto;
+        max-width: 350px;
+      }
+      &__month-title {
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+
+
   .noteCell {
     max-width: 200px;
     border: solid 1px black;
   }
+
+
+.payment-forms {
+  display: flex;
+  max-width: 1500px;
+  margin: auto;
+
+
+
+  .payment-initial-data {
+    // display: table;
+    select {
+      height: 36px;
+      border-radius: 5px;
+      background-color: white;
+      border-color: #dbdbdb;
+      color: #363636;
+      box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    }
+    input {
+      width: 60px;
+    }
+  }
+  .payment-calculation {
+    // display: table;
+    input {
+      width: 36px;
+    }
+  }
+}
+
+
+
+
+
+
+
 

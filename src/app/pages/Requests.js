@@ -151,7 +151,7 @@ class Requests extends React.Component {
           </div>
 
           <div className="notes-screen">
-            <form className="notes-screen__data-form" onSubmit={this.addNotes}>
+            <form className="notes-screen__data-form" onSubmit={this.addNote}>
               <h3 className="notes-screen__title">Additional notes</h3>
               <InputField type="date" placeholder="Date" name="date" />
               <InputField type="text" placeholder="Name" name="name" />
