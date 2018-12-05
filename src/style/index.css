@@ -312,6 +312,10 @@ table thead tr th, table tbody tr th, table tfoot tr th {
   text-align: center;
 }
 
+.payment-screen button {
+  margin: 10px 0 10px 0;
+}
+
 .noteCell {
   max-width: 200px;
   border: solid 1px black;
