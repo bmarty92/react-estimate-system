@@ -282,9 +282,18 @@ table {
 }
 
 
+.dayTable {
+  margin: 40px;
+  thead, tbody, tfoot {
+    tr {
+      border: solid 1px black;
+      th, td {
 
-
-
+        border: solid 1px black;
+      }
+    }
+  }
+}
 
 
 

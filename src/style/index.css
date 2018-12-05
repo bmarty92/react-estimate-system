@@ -346,4 +346,16 @@ table thead tr th, table tbody tr th, table tfoot tr th {
 .payment-forms .payment-calculation input {
   width: 36px;
 }
+
+.dayTable {
+  margin: 40px;
+}
+
+.dayTable thead tr, .dayTable tbody tr, .dayTable tfoot tr {
+  border: solid 1px black;
+}
+
+.dayTable thead tr th, .dayTable thead tr td, .dayTable tbody tr th, .dayTable tbody tr td, .dayTable tfoot tr th, .dayTable tfoot tr td {
+  border: solid 1px black;
+}
 /*# sourceMappingURL=index.css.map */

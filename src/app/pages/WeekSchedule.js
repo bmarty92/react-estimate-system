@@ -14,8 +14,8 @@ class WeekSchedule extends React.Component {
     this.state = {
       date: null,
       selectedItem: {},
+      quantity: null,
       calculatedPrice: null,
-      existingSchedule: null,
     };
   }
 
@@ -39,82 +39,79 @@ class WeekSchedule extends React.Component {
     const { selectedItem } = this.state;
     const calculated = Number(event.target.value) * selectedItem.price;
     this.setState({ calculatedPrice: calculated });
+    this.setState({ quantity: event.target.value });
   };
 
   addEntry = () => {
-    const { date, selectedItem, calculatedPrice } = this.state;
+    const { date, selectedItem, calculatedPrice, quantity } = this.state;
     const { addSchedule, match } = this.props;
     const payload = {
       date,
-      data: {
-        name: selectedItem.name,
-        code: selectedItem.code,
-        dimension: selectedItem.dimension,
-        price: selectedItem.price,
-        quantity: selectedItem.quantity,
-        total: calculatedPrice,
-      },
+      name: selectedItem.name,
+      code: selectedItem.code,
+      dimension: selectedItem.dimension,
+      price: selectedItem.price,
+      quantity,
+      total: calculatedPrice,
     };
     addSchedule(payload, match.params.id);
   };
 
   render() {
     const { estimates, schedule } = this.props;
-    const { date, selectedItem, calculatedPrice } = this.state;
-    const reducedSchedule = schedule.reduce((result, value) => {
-      const resultData = result[date] || [];
-      return {
-        ...result,
-        [value.date]: [...resultData, value.data],
-      };
-    }, {});
-    const resultDataObject = Object.entries(reducedSchedule);
+    const { selectedItem, calculatedPrice } = this.state;
     return (
       <React.Fragment>
-        <InputField type="date" onChange={this.setDate} name="date" />
-        {!!date && (
-          <table className="dayTable">
-            <thead>
+        <table className="dayTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Item Name</th>
+              <th>Item Code</th>
+              <th>Item Dimension</th>
+              <th>Item Quantity</th>
+              <th>Total price</th>
+            </tr>
+            <tr>
+              <th>
+                <InputField type="date" onChange={this.setDate} name="date" />
+              </th>
+              <th>
+                <select onChange={this.onSelect}>
+                  {estimates.map(estimate => (
+                    <option value={estimate.id}>{estimate.name}</option>
+                  ))}
+                </select>
+              </th>
+              <th>{selectedItem.code}</th>
+              <th>{selectedItem.dimension}</th>
+              <th>
+                <InputField
+                  placeholder="Quantity"
+                  type="number"
+                  onChange={this.calculateTotal}
+                  name="quantity"
+                />
+              </th>
+              <th>{calculatedPrice}</th>
+              <th>
+                <Button type="button" onClick={this.addEntry}>
+                  Create Entry
+                </Button>
+              </th>
+            </tr>
+          </thead>
+          {!!schedule.length &&
+            schedule.map(item => <ScheduleTable item={item} />)}
+          {!!schedule.length && (
+            <tfoot>
               <tr>
-                <th>Item Name</th>
-                <th>Item Code</th>
-                <th>Item Dimension</th>
-                <th>Item Quantity</th>
-                <th>Total price</th>
+                <td>Total Price</td>
+                <td>must be here</td>
               </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>
-                  <select onChange={this.onSelect}>
-                    {estimates.map(estimate => (
-                      <option value={estimate.id}>{estimate.name}</option>
-                    ))}
-                  </select>
-                </th>
-                <th>{selectedItem.code}</th>
-                <th>{selectedItem.dimension}</th>
-                <th>
-                  <InputField
-                    placeholder="Quantity"
-                    type="number"
-                    onChange={this.calculateTotal}
-                  />
-                </th>
-                <th>{calculatedPrice}</th>
-                <th>
-                  <Button type="button" onClick={this.addEntry}>
-                    Create Entry
-                  </Button>
-                </th>
-              </tr>
-            </tbody>
-          </table>
-        )}
-        <div>{JSON.stringify(Object.entries(reducedSchedule))}</div>
-        {/* {resultDataObject.map((element, index) => {
-          return <li>{JSON.stringify(element)}</li>;
-        })} */}
+            </tfoot>
+          )}
+        </table>
       </React.Fragment>
     );
   }
