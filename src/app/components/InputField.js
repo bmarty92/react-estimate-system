@@ -5,6 +5,7 @@ function InputField(props) {
   const { placeholder, name, type, onChange } = props;
   return (
     <input
+      step="0.01"
       className="input"
       placeholder={placeholder}
       name={name}

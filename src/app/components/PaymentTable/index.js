@@ -6,7 +6,7 @@ const days = Array.from(Array(31), (_, x) => x);
 function PaymentTable(props) {
   const { payment, month } = props;
   return (
-    <table className="mechanism-table">
+    <table className="styled-table">
     <caption>{`Payment calculation of ${month} month`}</caption>
       <thead>
         <tr>

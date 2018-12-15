@@ -5,9 +5,9 @@ function NotesRow(props) {
   const { date, name, message } = note;
   return (
     <tr>
-      <th>{date}</th>
-      <th>{name}</th>
-      <th className="noteCell">{message}</th>
+      <td>{date}</td>
+      <td>{name}</td>
+      <td>{message}</td>
     </tr>
   );
 }

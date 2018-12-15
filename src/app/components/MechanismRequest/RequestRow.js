@@ -5,9 +5,9 @@ function RequestRow(props) {
   const { date, name, note } = request;
   return (
     <tr>
-      <th>{date}</th>
-      <th>{name}</th>
-      <th className="noteCell">{note}</th>
+      <td>{date}</td>
+      <td>{name}</td>
+      <td className="noteCell">{note}</td>
     </tr>
   );
 }

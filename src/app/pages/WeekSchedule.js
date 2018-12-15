@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -60,8 +61,15 @@ class WeekSchedule extends React.Component {
   render() {
     const { estimates, schedule } = this.props;
     const { selectedItem, calculatedPrice } = this.state;
+    const totalPrice = schedule.reduce(
+      (result, value) => result + value.total,
+      0
+    );
     return (
-      <React.Fragment>
+      <div className="schedule-page">
+        <h3 className="schedule-page__title">
+        Insert Item Info to create Schedule Table
+        </h3>
         <table className="dayTable">
           <thead>
             <tr>
@@ -70,9 +78,9 @@ class WeekSchedule extends React.Component {
               <th>Item Code</th>
               <th>Item Dimension</th>
               <th>Item Quantity</th>
-              <th>Total price</th>
+              <th>Total price, Eu</th>
             </tr>
-            <tr>
+            <tr className="dayTable__form">
               <th>
                 <InputField type="date" onChange={this.setDate} name="date" />
               </th>
@@ -94,25 +102,27 @@ class WeekSchedule extends React.Component {
                 />
               </th>
               <th>{calculatedPrice}</th>
-              <th>
+              <th className="dayTable__buttonCell">
                 <Button type="button" onClick={this.addEntry}>
                   Create Entry
                 </Button>
               </th>
             </tr>
           </thead>
+          <tbody>
           {!!schedule.length &&
             schedule.map(item => <ScheduleTable item={item} />)}
+          </tbody>
           {!!schedule.length && (
             <tfoot>
               <tr>
-                <td>Total Price</td>
-                <td>must be here</td>
+                <td>Total Price, Eu</td>
+                <td>{totalPrice}</td>
               </tr>
             </tfoot>
           )}
         </table>
-      </React.Fragment>
+        </div>
     );
   }
 }

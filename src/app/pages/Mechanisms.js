@@ -39,7 +39,7 @@ function Mechanisms(props) {
         </form>
       </div>
       {!!mechanisms.length && (
-        <div className="estimates">
+        <div className="mechanisms">
           <MechanismTable mechanisms={mechanisms} />
         </div>
       )}

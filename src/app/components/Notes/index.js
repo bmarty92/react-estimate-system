@@ -4,7 +4,7 @@ import NotesRow from './NotesRow';
 function Notes(props) {
   const { notes } = props;
   return (
-    <table className="notes">
+    <table className="styled-table">
       <thead>
         <tr>
           <th>Date</th>

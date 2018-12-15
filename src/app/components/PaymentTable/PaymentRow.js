@@ -105,38 +105,40 @@ function PaymentRow({ employeePayment }) {
           Number(day31)}
       </td>
       <td>
-        {(Number(day1) +
-          Number(day2) +
-          Number(day3) +
-          Number(day4) +
-          Number(day5) +
-          Number(day6) +
-          Number(day7) +
-          Number(day8) +
-          Number(day9) +
-          Number(day10) +
-          Number(day11) +
-          Number(day12) +
-          Number(day13) +
-          Number(day14) +
-          Number(day15) +
-          Number(day16) +
-          Number(day17) +
-          Number(day18) +
-          Number(day19) +
-          Number(day20) +
-          Number(day21) +
-          Number(day22) +
-          Number(day23) +
-          Number(day24) +
-          Number(day25) +
-          Number(day26) +
-          Number(day27) +
-          Number(day28) +
-          Number(day29) +
-          Number(day30) +
-          Number(day31)) *
-          Number(euPerHour)}
+        {(
+          (Number(day1) +
+            Number(day2) +
+            Number(day3) +
+            Number(day4) +
+            Number(day5) +
+            Number(day6) +
+            Number(day7) +
+            Number(day8) +
+            Number(day9) +
+            Number(day10) +
+            Number(day11) +
+            Number(day12) +
+            Number(day13) +
+            Number(day14) +
+            Number(day15) +
+            Number(day16) +
+            Number(day17) +
+            Number(day18) +
+            Number(day19) +
+            Number(day20) +
+            Number(day21) +
+            Number(day22) +
+            Number(day23) +
+            Number(day24) +
+            Number(day25) +
+            Number(day26) +
+            Number(day27) +
+            Number(day28) +
+            Number(day29) +
+            Number(day30) +
+            Number(day31)) *
+          Number(euPerHour)
+        ).toFixed(2)}
       </td>
     </tr>
   );

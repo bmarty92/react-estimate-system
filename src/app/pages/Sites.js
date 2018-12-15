@@ -12,11 +12,31 @@ function Sites(props) {
   return (
     <div className="sites">
       {projects.map((project, index) => (
-        <Button
-          type="button"
-          onClick={() => history.push(`/site/${project.id}`)}
-          key={index}
-        >{`${project.name}, ${project.address}`}</Button>
+        <div className="site">
+          <div className="card">
+            <div className="card-content">
+              <div className="media">
+                <div className="media-content">
+                  <h1>Project Name:</h1>
+                  <p className="title is-4">{project.name}</p>
+                  <p>Address:</p>
+                  <p className="subtitle is-6">{project.address}</p>
+                  <p>Contractor:</p>
+                  <p className="subtitle is-6">{project.company}</p>
+                  <p>Responsible person:</p>
+                  <p className="subtitle is-6">{project.person}</p>
+                </div>
+              </div>
+            </div>
+            <Button
+              type="button"
+              onClick={() => history.push(`/site/${project.id}`)}
+              key={index}
+            >
+              Select
+            </Button>
+          </div>
+        </div>
       ))}
     </div>
   );

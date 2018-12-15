@@ -4,7 +4,7 @@ import RequestRow from './RequestRow';
 function MechanismRequest(props) {
   const { mechanismsRequest } = props;
   return (
-    <table className="request-table">
+    <table className="styled-table">
       <thead>
         <tr>
           <th>Request Date</th>

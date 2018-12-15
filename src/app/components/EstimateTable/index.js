@@ -3,8 +3,12 @@ import EstimateRow from './EstimateRow';
 
 function EstimateTable(props) {
   const { estimates } = props;
+  const allPrice = estimates.reduce(
+    (result, value) => result + value.price * value.quantity,
+    0
+  );
   return (
-    <table className="estimate-table">
+    <table className="styled-table">
       <thead>
         <tr>
           <th>Item Name</th>
@@ -12,7 +16,7 @@ function EstimateTable(props) {
           <th>Item Dimension</th>
           <th>Item Quantity</th>
           <th>Item Price</th>
-          <th>Total price</th>
+          <th>Total price, Eu</th>
         </tr>
       </thead>
       <tbody>
@@ -22,8 +26,8 @@ function EstimateTable(props) {
       </tbody>
       <tfoot>
         <tr>
-          <th>Total Price</th>
-          <th>Calculation must be here</th>
+          <td>Total Price, Eu</td>
+          <td>{allPrice.toFixed(2)}</td>
         </tr>
       </tfoot>
     </table>

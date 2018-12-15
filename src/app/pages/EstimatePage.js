@@ -32,7 +32,7 @@ function EstimatePage(props) {
         <InputField placeholder="Item Name" name="name" />
         <InputField placeholder="Item Code" name="code" />
         <InputField placeholder="Item Dimension" name="dimension" />
-        <InputField placeholder="Item Quantity" name="quantity" type="number" />
+        <InputField placeholder="Item Quantity" name="quantity" type="number"  />
         <InputField placeholder="Item Price" name="price" type="number" />
         <Button type="submit">Submit Entry</Button>
       </form>

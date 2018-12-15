@@ -4,14 +4,14 @@ import RequestRow from './RequestRow';
 function MaterialRequest(props) {
   const { materialRequest } = props;
   return (
-    <table>
+    <table className="styled-table">
       <thead>
         <tr>
           <th>Request Date</th>
           <th>Material Name</th>
           <th>Material Dimension</th>
           <th>Material Quantity</th>
-          <th className="noteCell">Note</th>
+          <th>Note</th>
         </tr>
       </thead>
       <tbody>

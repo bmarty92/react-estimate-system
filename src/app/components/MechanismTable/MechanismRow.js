@@ -4,12 +4,12 @@ function EstimateRow({ mechanism }) {
   const { name, company, time, price, timeDim } = mechanism;
   return (
     <tr>
-      <th>{name}</th>
-      <th>{company}</th>
-      <th>{time}</th>
-      <th>{timeDim}</th>
-      <th>{price}</th>
-      <th>{Number(price) * Number(time)}</th>
+      <td>{name}</td>
+      <td>{company}</td>
+      <td>{time}</td>
+      <td>{timeDim}</td>
+      <td>{price}</td>
+      <td>{(Number(price) * Number(time)).toFixed(2)}</td>
     </tr>
   );
 }

@@ -3,16 +3,20 @@ import MechanismRow from './MechanismRow';
 
 function MechanismTable(props) {
   const { mechanisms } = props;
+  const allPrice = mechanisms.reduce(
+    (result, value) => result + value.price * value.time,
+    0
+  );
   return (
-    <table className="mechanism-table">
+    <table className="styled-table">
       <thead>
         <tr>
           <th>Mechanism Name</th>
           <th>Providing Company</th>
           <th>Usage Time</th>
           <th>Time Dimension</th>
-          <th>Price</th>
-          <th>Total price</th>
+          <th>Price, Eu</th>
+          <th>Total price, Eu</th>
         </tr>
       </thead>
       <tbody>
@@ -22,8 +26,8 @@ function MechanismTable(props) {
       </tbody>
       <tfoot>
         <tr>
-          <th>Total Price</th>
-          <th>Calculation must be here</th>
+          <td>Total Price, Eu</td>
+          <td>{allPrice.toFixed(2)}</td>
         </tr>
       </tfoot>
     </table>

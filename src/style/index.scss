@@ -60,10 +60,69 @@
     }
   }
 }
+
+.schedule-page {
+  align-items: center;
+  &__title {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .dayTable {
+    margin: auto;
+    min-width: 1000px;
+
+    &__form {
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    &__buttonCell {
+      border: none;
+    }
+
+    thead {
+      background-color: #4288f7;
+      tr {
+          th {
+            border: 1px solid #ddd;
+            padding: 8px;
+          }
+        }
+      }
+      tbody {
+        tr {
+          &:nth-child(even) {
+            background-color: aqua;
+          }
+          td {
+            border: 1px solid #ddd;
+            padding: 8px;
+          }
+        }
+      }
+      tfoot {
+        tr {
+          td {
+            border: 1px solid #ddd;
+            padding: 8px;
+          }
+        }
+      }
+    }
+}
+
+
+
+
 .site-header {
   display: flex;
   flex-flow: column;
-  min-height: 35vh;
+  min-height: 25vh;
   background-color: #3252E5;
   align-items: center;
   padding: 0 130px;
@@ -108,9 +167,13 @@
   }
 }
 
+.request-screen {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 .mechanism-request-screen {
-  max-width: 500px;
-  align-items: center;
+  width: 30%;
   &__title {
     margin-top: 20px;
     font-family: 'Roboto', sans-serif;
@@ -134,8 +197,7 @@
 }
 
 .material-request-screen {
-  max-width: 500px;
-  align-items: center;
+  width: 30%;
   &__title {
     margin-top: 20px;
     font-family: 'Roboto', sans-serif;
@@ -159,8 +221,7 @@
 }
 
 .notes-screen {
-  max-width: 500px;
-  align-items: center;
+  width: 30%;
   &__title {
     margin-top: 20px;
     font-family: 'Roboto', sans-serif;
@@ -181,52 +242,11 @@
       margin-top: 10px;
     }
   }
-}
-
-
-
-.request-screen {
-  display: flex;
-}
-
-
-table {
-  margin: 40px;
-  thead, tbody, tfoot {
-    tr {
-      border: solid 1px black;
-      th {
-
-        border: solid 1px black;
-      }
-    }
   }
 }
 
-.payment-table {
-  margin: 40px;
-  thead, tbody, tfoot {
-    tr {
-      border: solid 1px black;
-      th {
-        width: 30px;
-        border: solid 1px black;
-        }
-      td {
-        width: 30px;
-        border: solid 1px black;
-        }
-        .input-cell {
-          border: solid 1px black;
-          width: 150px;
-          }
-        .number-cell {
-          border: solid 1px black;
-          width: 40px;
-          }
-        }
-      }
-    }
+
+
 
     .payment-screen {
       margin: auto;
@@ -246,21 +266,12 @@ table {
     }
 
 
-  .noteCell {
-    max-width: 200px;
-    border: solid 1px black;
-  }
-
 
 .payment-forms {
   display: flex;
   max-width: 1500px;
   margin: auto;
-
-
-
   .payment-initial-data {
-    // display: table;
     select {
       height: 36px;
       border-radius: 5px;
@@ -274,7 +285,6 @@ table {
     }
   }
   .payment-calculation {
-    // display: table;
     input {
       width: 36px;
     }
@@ -282,18 +292,63 @@ table {
 }
 
 
-.dayTable {
-  margin: 40px;
-  thead, tbody, tfoot {
-    tr {
-      border: solid 1px black;
-      th, td {
-
-        border: solid 1px black;
-      }
+.sites {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  .site {
+    flex: 0 0 25%;
+    padding: 0 20px;
+    max-width: 25%;
+    margin-bottom: 20px;
+    position: relative;
+    button {
+      margin: 10px;
+      min-width: 200px;
     }
   }
 }
+
+
+
+
+
+.styled-table {
+  margin: auto;
+  min-width: 90%;
+  thead {
+    background-color: #4288f7;
+    tr {
+        th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: aqua;
+        }
+        td {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+      }
+    }
+    tfoot {
+      tr {
+        td {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+      }
+    }
+  }
+
+
+
+
 
 
 

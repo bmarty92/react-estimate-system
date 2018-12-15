@@ -5,11 +5,11 @@ function RequestRow(props) {
   const { date, name, note, dimension, quantity } = request;
   return (
     <tr>
-      <th>{date}</th>
-      <th>{name}</th>
-      <th>{dimension}</th>
-      <th>{quantity}</th>
-      <th className="noteCell">{note}</th>
+      <td>{date}</td>
+      <td>{name}</td>
+      <td>{dimension}</td>
+      <td>{quantity}</td>
+      <td>{note}</td>
     </tr>
   );
 }
