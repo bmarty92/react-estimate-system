@@ -7,6 +7,7 @@ import PageNotFound from './pages/PageNotFound';
 import Sites from './pages/Sites';
 import Navbar from './components/Navbar';
 import Site from './pages/Site';
+import Footer from './components/Footer';
 
 const routes = [
   {
@@ -23,7 +24,7 @@ function App() {
   return (
     <div className="estimate-system">
       <Navbar routes={routes} />
-      <div>
+      <main className="main-screen">
         <Switch>
           <Route exact path="/create-site" component={InitialScreen} />
           <Redirect exact from="/" to="/create-site" />
@@ -32,7 +33,8 @@ function App() {
           <Route path="/site/:id" component={Site} />
           <Redirect from="*" to="/404" />
         </Switch>
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 }

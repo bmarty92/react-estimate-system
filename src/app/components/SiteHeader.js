@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function SiteHeader(props) {
   const { tittle, address } = props;
@@ -9,5 +10,10 @@ function SiteHeader(props) {
     </header>
   );
 }
+
+SiteHeader.propTypes = {
+  tittle: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+};
 
 export default SiteHeader;

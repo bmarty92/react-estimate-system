@@ -7,12 +7,26 @@
 
 
 
-.app-navbar {
-  display: flex;
-  &__item {
-    justify-content: flex-end;
-    padding: 0 20px;
-    justify-content: flex-end;
+
+
+.estimate-system {
+display: flex;
+flex-direction: column;
+  .app-navbar {
+    display: flex;
+    &__item {
+      justify-content: flex-end;
+      padding: 0 20px;
+      justify-content: flex-end;
+    }
+  }
+  .main-screen {
+    min-height: 90vh;
+  }
+  .app-footer {
+  align-self: flex-end;
+  margin: auto;
+  text-align: center;
   }
 }
 

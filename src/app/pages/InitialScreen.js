@@ -5,12 +5,11 @@ import { bindActionCreators } from 'redux';
 import Button from '../components/Button';
 import InputField from '../components/InputField';
 
-
 import sites from '../../sites';
 
 function InitialScreen(props) {
   const { addInitialData } = props;
-  const onSubmit = (event) => {
+  const onSubmit = event => {
     event.preventDefault();
     const payload = [...event.target.children].reduce((result, child) => {
       if (child.tagName.toUpperCase() !== 'INPUT') {
@@ -22,7 +21,7 @@ function InitialScreen(props) {
       };
     }, {});
     addInitialData(payload);
-  }
+  };
   return (
     <div className="initial-screen">
       <h3 className="initial-screen__title">Insert initial site info</h3>

@@ -5,18 +5,39 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.app-navbar {
+.estimate-system {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.estimate-system .app-navbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.app-navbar__item {
+.estimate-system .app-navbar__item {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding: 0 20px;
   justify-content: flex-end;
+}
+
+.estimate-system .main-screen {
+  min-height: 90vh;
+}
+
+.estimate-system .app-footer {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: auto;
+  text-align: center;
 }
 
 .initial-screen {
