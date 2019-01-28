@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
 import InputField from '../components/InputField';
 import Button from '../components/Button';
@@ -44,6 +45,12 @@ function EstimatePage(props) {
     </div>
   );
 }
+
+EstimatePage.propTypes = {
+  addItemData: PropTypes.func.isRequired,
+  estimates: PropTypes.arrayOf({}).isRequired,
+  match: PropTypes.shape({}).isRequired,
+};
 
 const enhance = connect(
   (state, props) => ({

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
 import Button from '../components/Button';
 import InputField from '../components/InputField';
@@ -35,6 +36,10 @@ function InitialScreen(props) {
     </div>
   );
 }
+
+InitialScreen.propTypes = {
+  addInitialData: PropTypes.func.isRequired,
+};
 
 const enhance = connect(
   null,

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
 import MechanismTable from '../components/MechanismTable';
 import InputField from '../components/InputField';
@@ -9,7 +10,7 @@ import Button from '../components/Button';
 import sites from '../../sites';
 
 function Mechanisms(props) {
-  const { mechanisms, addMechanismData, match} = props;
+  const { mechanisms, addMechanismData, match } = props;
   const onSubmit = event => {
     event.preventDefault();
     const payload = [...event.target.children].reduce((result, child) => {
@@ -46,6 +47,12 @@ function Mechanisms(props) {
     </React.Fragment>
   );
 }
+
+Mechanisms.propTypes = {
+  addMechanismData: PropTypes.func.isRequired,
+  mechanisms: PropTypes.arrayOf({}).isRequired,
+  match: PropTypes.shape({}).isRequired,
+};
 
 const enhance = connect(
   (state, props) => ({

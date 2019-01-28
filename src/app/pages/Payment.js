@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
 import PaymentTable from '../components/PaymentTable';
 import InputField from '../components/InputField';
@@ -69,9 +70,10 @@ class Payment extends React.Component {
   };
 
   addEmployee = event => {
+    const { names } = this.state;
     event.preventDefault();
     this.setState({
-      names: [...this.state.names, event.target.employeeData.value],
+      names: [...names, event.target.employeeData.value],
     });
   };
 
@@ -150,6 +152,12 @@ class Payment extends React.Component {
     );
   }
 }
+
+Payment.propTypes = {
+  addPayment: PropTypes.func.isRequired,
+  match: PropTypes.shape({}).isRequired,
+  payment: PropTypes.arrayOf({}).isRequired,
+};
 
 const enhance = connect(
   (state, props) => ({

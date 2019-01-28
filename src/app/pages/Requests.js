@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
 import MechanismRequest from '../components/MechanismRequest';
 import MaterialRequest from '../components/MaterialRequest';
@@ -175,6 +176,16 @@ class Requests extends React.Component {
     );
   }
 }
+
+Requests.propTypes = {
+  addNotes: PropTypes.func.isRequired,
+  addMaterialRequests: PropTypes.func.isRequired,
+  addMechanismRequests: PropTypes.func.isRequired,
+  match: PropTypes.shape({}).isRequired,
+  mechanismsRequest: PropTypes.arrayOf({}).isRequired,
+  materialRequest: PropTypes.arrayOf({}).isRequired,
+  notes: PropTypes.arrayOf({}).isRequired,
+};
 
 const enhance = connect(
   (state, props) => ({

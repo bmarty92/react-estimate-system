@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import EstimatePage from './EstimatePage';
 import Mechanisms from './Mechanisms';
@@ -63,6 +64,12 @@ class Site extends React.Component {
     );
   }
 }
+
+Site.propTypes = {
+  history: PropTypes.shape({}).isRequired,
+  site: PropTypes.shape({}).isRequired,
+  match: PropTypes.shape({}).isRequired,
+};
 
 const enhance = connect((state, props) => ({
   site: sites.selectors.getSiteById(state, props.match.params.id),

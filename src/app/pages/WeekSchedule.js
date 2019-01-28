@@ -1,7 +1,7 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 
 import InputField from '../components/InputField';
 import Button from '../components/Button';
