@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import NotesRow from './NotesRow';
 
 function Notes(props) {
@@ -20,5 +22,9 @@ function Notes(props) {
     </table>
   );
 }
+
+Notes.propTypes = {
+  notes: PropTypes.arrayOf({}).isRequired,
+};
 
 export default Notes;

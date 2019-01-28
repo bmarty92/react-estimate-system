@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function EstimateRow({ mechanism }) {
   const { name, company, time, price, timeDim } = mechanism;
@@ -13,5 +14,9 @@ function EstimateRow({ mechanism }) {
     </tr>
   );
 }
+
+EstimateRow.propTypes = {
+  mechanism: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+};
 
 export default EstimateRow;

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import MechanismRow from './MechanismRow';
 
 function MechanismTable(props) {
@@ -33,5 +35,9 @@ function MechanismTable(props) {
     </table>
   );
 }
+
+MechanismTable.propTypes = {
+  mechanisms: PropTypes.arrayOf({}).isRequired,
+};
 
 export default MechanismTable;

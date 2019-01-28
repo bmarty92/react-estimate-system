@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import RequestRow from './RequestRow';
 
 function MaterialRequest(props) {
@@ -22,5 +24,9 @@ function MaterialRequest(props) {
     </table>
   );
 }
+
+MaterialRequest.propTypes = {
+  materialRequest: PropTypes.arrayOf({}).isRequired,
+};
 
 export default MaterialRequest;

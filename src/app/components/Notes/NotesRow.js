@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function NotesRow(props) {
   const { note } = props;
@@ -11,5 +12,9 @@ function NotesRow(props) {
     </tr>
   );
 }
+
+NotesRow.propTypes = {
+  note: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+};
 
 export default NotesRow;

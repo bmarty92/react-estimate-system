@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function RequestRow(props) {
   const { request } = props;
@@ -14,4 +15,7 @@ function RequestRow(props) {
   );
 }
 
+RequestRow.propTypes = {
+  request: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+};
 export default RequestRow;

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import EstimateRow from './EstimateRow';
 
 function EstimateTable(props) {
@@ -33,5 +35,9 @@ function EstimateTable(props) {
     </table>
   );
 }
+
+EstimateTable.propTypes = {
+  estimates: PropTypes.arrayOf({}).isRequired,
+};
 
 export default EstimateTable;

@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function PaymentRow({ employeePayment }) {
+function PaymentRow(props) {
+  const { employeePayment } = props;
   const {
     name,
     euPerHour,
@@ -143,5 +145,9 @@ function PaymentRow({ employeePayment }) {
     </tr>
   );
 }
+
+PaymentRow.propTypes = {
+  employeePayment: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+};
 
 export default PaymentRow;

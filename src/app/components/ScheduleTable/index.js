@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ScheduleTable(props) {
   const { item } = props;
@@ -16,5 +17,9 @@ function ScheduleTable(props) {
     </React.Fragment>
   );
 }
+
+ScheduleTable.propTypes = {
+  item: PropTypes.arrayOf({}).isRequired,
+};
 
 export default ScheduleTable;

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import RequestRow from './RequestRow';
 
 function MechanismRequest(props) {
@@ -20,5 +22,9 @@ function MechanismRequest(props) {
     </table>
   );
 }
+
+MechanismRequest.propTypes = {
+  mechanismsRequest: PropTypes.arrayOf({}).isRequired,
+};
 
 export default MechanismRequest;

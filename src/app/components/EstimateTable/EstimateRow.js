@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function EstimateRow({ estimate }) {
   const { name, code, dimension, price, quantity } = estimate;
@@ -13,5 +14,9 @@ function EstimateRow({ estimate }) {
     </tr>
   );
 }
+
+EstimateRow.propTypes = {
+  estimate: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+};
 
 export default EstimateRow;

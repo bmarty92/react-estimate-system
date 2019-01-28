@@ -9,7 +9,8 @@ function Button(props) {
     }
   };
   return (
-    <button className="button" type={type} onClick={click} >
+    // eslint-disable-next-line react/button-has-type
+    <button className="button" type={type} onClick={click}>
       {children}
     </button>
   );

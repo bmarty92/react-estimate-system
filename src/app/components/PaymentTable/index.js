@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import PaymentRow from './PaymentRow';
 
 const days = Array.from(Array(31), (_, x) => x);
@@ -7,7 +9,7 @@ function PaymentTable(props) {
   const { payment, month } = props;
   return (
     <table className="styled-table">
-    <caption>{`Payment calculation of ${month} month`}</caption>
+      <caption>{`Payment calculation of ${month} month`}</caption>
       <thead>
         <tr>
           <th>Employee Name</th>
@@ -27,5 +29,10 @@ function PaymentTable(props) {
     </table>
   );
 }
+
+PaymentTable.propTypes = {
+  payment: PropTypes.arrayOf({}).isRequired,
+  month: PropTypes.string.isRequired,
+};
 
 export default PaymentTable;
